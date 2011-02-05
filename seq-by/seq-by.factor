@@ -1,7 +1,7 @@
 ! Copyright (C) 2011 Fred Alger.
 ! See http://factorcode.org/license.txt for BSD license.
 USING: sequences accessors kernel arrays ;
-IN: weblog.seq-by
+IN: seq-by
 
 
 TUPLE: seq-by seq quot ;
