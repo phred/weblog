@@ -1,0 +1,22 @@
+
+Well, this last weekend, instead of writing code or blog posts, I fiddled with "Dexy":http//dexy.it.  And I've come to one simple conclusion:
+
+h2. Dexy is freakin' awesome!
+
+Dexy is a documentation writer's dream tool: it takes words about code, pictures, and original unchanged source code and generates absolutely gorgeous documentation.  In fact, Dexy generated the markup for this entire post from just a few small files and automatically posted it to my WordPress blog. Now *that* is utility!
+
+Here is a Factor script:
+{{ d['dexyfied.factor|pyg'] }}
+
+See that funky @export comment in there?  That lets Dexy pull out just a small section of that script:
+{{ d['sections']['dexyfied.factor|fsec|idio']['section-1'] }}
+
+I even got simple interactive Factor sessions going:
+{{ d['simple.factor|factor|pyg'] }}
+
+That's the result of running this Factor program:
+{{ d['simple.factor|pyg'] }}
+
+It's re-generated each time that the file changes: no bitrot, just exactly what happens when you type that code into the Factor listener, always in sync with the code on disk.  This is sort of like "Literate Programming":http://en.wikipedia.org/wiki/Literate_Programming but without doing weird things to the source code while retaining the ability to structure the documentation like, well, a document.
+
+Still a bunch of bugs with the interactive handler, and the splitting of Factor "sections" is a hack, but I hope to improve these things as I go.  Already, this beats the old "copy-and-paste" approach by a factor of approximately 10 "jillion.":http://www.urbandictionary.com/define.php?term=A%20Jillion  Take a look at the "source to this post.":http://github.com/phred/weblog/blob/master/dexified/

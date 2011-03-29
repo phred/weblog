@@ -1,0 +1,7 @@
+{
+"*.html|jinja": {"allinputs": true},
+"*.factor|pyg": {},
+"*.factor|fsec|idio": {},
+"simple.factor|factor|pyg": {},
+"*.css|dexy": {}
+}
