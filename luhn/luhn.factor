@@ -1,19 +1,19 @@
 ! Copyright (C) 2011 Fred Alger.
 ! See http://factorcode.org/license.txt for BSD license.
-USING: grouping kernel sequences math ;
+USING: arrays grouping kernel math sequences sequences.deep ;
 IN: luhn
 
-: digits ( n -- tens ones )
-    10 /mod ;
+: sum-digits ( n -- sum )
+    10 /mod + ;
 
 : double-every-other ( seq -- seq )
-   2 <sliced-groups> [ first2 swap 2 * digits + + ] map ;
+   2 <groups> [ first2 2 * 2array ] map flatten ;
 
 : multiple-of-ten? ( n -- ? )
     10 mod 0 = ;
 
+: luhn-sum ( seq -- n )
+   double-every-other [ sum-digits ] map-sum ;
+
 : luhn-valid? ( seq -- ? )
-   reverse                     #! Proceed from left to right
-   unclip                      #! Set aside the check digit
-   [ double-every-other sum ] dip +
-   multiple-of-ten? ;
+   unclip-last swap luhn-sum + multiple-of-ten? ;
