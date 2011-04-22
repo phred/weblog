@@ -1,1 +1,6 @@
 .*.sw*
+.gitignore
+wp-config.json
+artifacts
+cache
+logs

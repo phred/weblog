@@ -1,0 +1,5 @@
+
+Code and source for posts at "http://weblog.fredalger.net".  Posts are generated and posted to WordPress using "Dexy":http://dexy.it
+
+dexyfied:
+    This is your weblog on dexy.  Ain't it grand?
