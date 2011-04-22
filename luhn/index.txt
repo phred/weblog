@@ -81,3 +81,6 @@ Look at "the examples":http://en.wikipedia.org/wiki/Luhn_algorithm#Verification_
 Granted, those aren't the most shining examples of implementations (hell, I've written stuff equally confusing), that this is a trivial algorithm, and maybe I'm getting old, but nowadays all of those just look like esoteric nonsense. (Really, look at the Java and Python implementations; way too clever for their own good).
 
 Now if only I could grow a decent beard to go with these suspenders…
+
+
+The source to this post is "available on GitHub":https://github.com/phred/weblog/tree/master/luhn
