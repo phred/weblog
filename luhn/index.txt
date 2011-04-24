@@ -41,7 +41,7 @@ It's almost readable as English: "Given a sequence, produce a new sequence, as s
 
 A few quick tests in the listener shows that this word works as expected.
 
-Next we need a word that sums the digits of a sequence.  That is, for the sequence @{ 1, 11, 5 }@, this word should produce the sum @(1 + (1 + 1) + 5) = 17@.
+Next we need a word that sums the digits of a sequence.  That is, for the sequence @{ 1, 11, 5 }@, this word should produce the sum @(1 + (1 + 1) + 5) = 8@.
 
 Well, the @sum@ word in Factor adds the numbers in a sequence together, but we need to treat two-digit numbers specially.  Using integer arithmetic, the way to sum the digits of a two-digit number is to divide the number by 10 (@num / 10@) and add the remainder (@num mod 10@).  Handily, Factor provides a @/mod@ (read "divmod") word which does both in one step.  Let's have a go at @sum-digits@:
 
