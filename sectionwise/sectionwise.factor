@@ -1,11 +1,19 @@
 ! Copyright (C) 2011 Fred Alger.
 ! See http://factorcode.org/license.txt for BSD license.
 USING: kernel vocabs.parser lexer namespaces
-       accessors assocs vectors sequences hashtables ;
+       accessors assocs vectors sequences hashtables
+       vocabs.files io.encodings.utf8 io.files ;
 
 IN: weblog.sectionwise
 
 TUPLE: code-section name start-line end-line vocab ;
+GENERIC: source-lines ( obj -- lines )
+
+M: code-section source-lines ( obj -- lines )
+    [ start-line>> ]
+    [ end-line>> ]
+    [ vocab>> vocab-files first utf8 file-lines ] tri
+    <slice> ;
 
 : sectionwise-sections ( -- sections )
     H{ } ;

@@ -9,6 +9,7 @@ IN: weblog.sectionwise.tests
     <section tricky-business
         #! Here's a tricky section
         1 dup 2drop ;
+
     section>
 section>
 
