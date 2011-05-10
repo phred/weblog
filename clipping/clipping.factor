@@ -5,18 +5,20 @@ USING: io.streams.string json.writer kernel namespaces present
 prettyprint strings ui.clipboards ui.operations ;
 IN: weblog.clipping
 
-
-: prettyprint ( obj -- str )
-    [ pprint ] with-string-writer ;
-
+#! @export clipboardify
 : >clipboard ( str -- )
     clipboard get set-clipboard-contents ;
 
-: copy ( obj -- )
-  prettyprint >clipboard ;
 
+#! @export copy
+: copy ( obj -- )
+  unparse >clipboard ;
+
+[ drop t ] \ copy H{ } define-operation
+
+
+#! @export copy-json
 : copy-json ( obj -- )
   >json >clipboard ;
 
-[ drop t ] \ copy H{ } define-operation
 [ string? not ] \ copy-json H{ } define-operation
