@@ -1,5 +1,24 @@
 
 Code and source for posts at "http://weblog.fredalger.net".  Posts are generated and posted to WordPress using "Dexy":http://dexy.it
 
+seq-by:
+    Sorting sequences of Factor objects by their slots.
+    http://weblog.fredalger.net/2011/02/sorting-in-factor.html
+
 dexyfied:
     This is your weblog on dexy.  Ain't it grand?
+    http://weblog.fredalger.net/2011/03/this-is-your-weblog-on-dexy.html
+
+luhn:
+    Implementation of the Luhn algorithm in Factor.
+    http://weblog.fredalger.net/2011/04/factoring-the-luhn-algorithm.html
+
+clipping:
+    Extending the Factor listener to allow any object to be copied as text or JSON.
+    http://weblog.fredalger.net/2011/05/copy-and-copy-json-essential-listener-hacks.html
+
+oohembed:
+    (in progress) OEmbed in Factor using the oohembed web service.
+
+sectionwise:
+    (in progress) Sectionwise handlers for Factor, designed to replace my nasty hack to Dexy's built-in sectionwise splitter.
