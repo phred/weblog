@@ -1,0 +1,27 @@
+
+Something I've really wanted in the Listener for a while is the ability to right-click and copy a string to the clipboard.  I've been working around that by having my own ">clipboard" word that places a single string argument on the clipboard — extremely handy for debugging long HTTP responses which get truncated at the right-side of the window.
+
+{{ d['sections']['clipping.factor|fsec|idio']['clipboardify'] }}
+
+This is from Factor's useful "@ui.clipboards@ vocab":http://docs.factorcode.org/content/vocab-ui.clipboards.html, which is the most concise and least ugly way I've seen to handle clipboards in a cross-platform GUI.  @clipboard@ is a global reference to the current clipboard object whose methods are overridden to handle the dirty details of the current platform's clipboard.
+
+Along came "this useful post":http://re-factor.blogspot.com/2011/05/open-url-in-listener.html about adding an 'open url' command for URLs in the listener, and I saw a path to my goal: @ui.operations@ and the @define-operation@ word.
+
+Combined with @unparse@ to get a string representation of an object, this adds a "Copy" command to the Listener's context menu for *all* objects:
+
+{{ d['sections']['clipping.factor|fsec|idio']['copy'] }}
+
+
+In this brave new Web 2.0 world, it's dangerous to go alone!  Take this JSON with you*:
+
+{{ d['sections']['clipping.factor|fsec|idio']['copy-json'] }}
+
+
+Load up the vocab (or paste those definitions in the Listener), and voilá — the GUI is instantly extended with new context menu options:
+
+!http://weblog.fredalger.net/wp-content/uploads/2011/05/Listener.png!
+
+
+As usual, this is all "available on GitHub":https://github.com/phred/weblog/tree/master/clipping
+
+*(Sorry for the Zelda reference, just spent a happy weekend playing a big chunk of the awesome "LD20":http://www.ludumdare.com/compo/ludum-dare-20/ 48-hour game compo entries)
